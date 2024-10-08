@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Spotify Download Button",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "downloads",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://open.spotify.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "host_permissions": [
+    "https://open.spotify.com/*",
+    "https://spodl.sazumi.moe/*"
+  ]
+}
